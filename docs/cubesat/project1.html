@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CubeSat Project 1 Instructions — ConnectEd Code</title>
+  <meta name="description" content="Step-by-step instructions for CubeSat Project 1 — display, variables, timestep, acceleration.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .step { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step strong { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><img src="../images/logo-white.svg" alt="ConnectEd Code"></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../free-resources.html">Free Resources</a></li>
+          <li><a href="../school-events.html">School Events</a></li>
+          <li><a href="../teacher-pd.html">Teacher PD</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="mailto:info@connectedcode.org" aria-label="Email"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 750px;">
+      <h1 class="section-title">CubeSat Project 1 Instructions</h1>
+      <p style="margin-bottom:2rem;">Download the final code <a href="https://www.connectedcode.org/s/Project-1-Referencekby.py">here</a>.</p>
+
+      <div class="step"><strong>Step 1.</strong> Clear the display, and print "Hello". Run your program to test it.<img src="images/p1-step1.jpg" alt="Step 1 — print Hello" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 2.</strong> Create a new variable called "name".<img src="images/p1-step2.jpg" alt="Step 2 — create name variable" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 3.</strong> Set the name variable, and change your print to print "Hello" and then your name variable.<img src="images/p1-step3.jpg" alt="Step 3 — set name and print" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 4.</strong> Test your program. Once it is working, you can click "New" and we'll start the project.</div>
+      <div class="step"><strong>Step 5.</strong> Use the "on start" block to set a new "timestep" variable to 0. <strong>Do not call this variable "time".</strong><img src="images/p1-step4.jpg" alt="Step 5 — set timestep variable" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 6.</strong> Add an "every 1 seconds" block, and inside it, "change" the timestep, then clear the display and print "time" and your "timestep" variable.<img src="images/p1-step5.jpg" alt="Step 6 — every 1 seconds block" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 7.</strong> Add a "when button A was pressed" block with "exit program" inside it, to let you quit your program. Run it to test that it counts up every second and you can quit it.<img src="images/p1-step6.jpg" alt="Step 7 — button A exit program" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 8.</strong> Create a new "accel" variable, and use the accelerometer sensor to set it to the magnitude.<img src="images/p1-step7.jpg" alt="Step 8 — accelerometer sensor" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+      <div class="step"><strong>Step 9.</strong> Also print the acceleration value to the display.<img src="images/p1-step8.jpg" alt="Step 9 — print acceleration" style="margin-top: 1rem; border-radius: 4px; max-width: 100%; display: block;"></div>
+
+      <p style="margin-top: 1.5rem;">This is the final program. Run it to make sure that it prints both values to the screen, and stops when you press A.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><img src="../images/logo-white.svg" alt="ConnectEd Code"></a>
+        <p>Connecting coding with context, community &amp; curriculum.</p>
+      </div>
+      <div class="footer-section"><h4>Contact</h4><ul><li><a href="mailto:info@connectedcode.org">info@connectedcode.org</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 ConnectEd Code. All rights reserved.</span></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

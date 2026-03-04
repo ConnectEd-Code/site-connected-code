@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher PD — ConnectEd Code</title>
+  <meta name="description" content="Professional development sessions for teachers. From coding concepts to curriculum links, helping tech teachers up-skill.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="images/logo-white.svg" alt="ConnectEd Code"></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="free-resources.html">Free Resources</a></li>
+          <li><a href="school-events.html">School Events</a></li>
+          <li><a href="teacher-pd.html" class="active">Teacher PD</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="https://www.facebook.com/ConnectEdCode" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/70023307/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77A1.75 1.75 0 000 1.73v20.54A1.75 1.75 0 001.77 24h20.46A1.75 1.75 0 0024 22.27V1.73A1.75 1.75 0 0022.23 0z"/></svg>
+        </a>
+        <a href="mailto:info@connectedcode.org" aria-label="Email">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero hero-small">
+    <div class="hero-bg" style="background-image: url('images/teacher-pd.jpg');"></div>
+    <div class="hero-content">
+      <h1>From coding concepts to curriculum links, helping tech teachers up-skill is our passion!</h1>
+      <p>Whether you're a teacher who's completely new to coding, wanting to add some new tech skills to your collection, or want a hand pulling a sequence of STEM activities together to cover the curriculum, we're here to help.</p>
+    </div>
+  </section>
+
+  <!-- ===== Form Section ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="form-section">
+        <h2>Interested in teacher PD sessions for your school?</h2>
+        <p>Let us know how we can help by telling us what kind of PD you are looking for (coding boot camp, curriculum planning, unplugged games, etc). Let us know how many teachers we'd be working with and how many sessions you would like.</p>
+        <p>We look forward to creating a custom experience for your staff!</p>
+
+        <form id="teacher-pd-form" data-form-type="teacher-pd">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name <span class="required">*</span></label>
+              <input type="text" id="first-name" name="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name <span class="required">*</span></label>
+              <input type="text" id="last-name" name="lastName" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="school">School</label>
+            <input type="text" id="school" name="school">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" required placeholder="Tell us what kind of PD you're looking for, number of teachers, session count, etc."></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo-white.svg" alt="ConnectEd Code"></a>
+        <p>Connecting coding with context, community &amp; curriculum. Making STEM accessible to students and teachers across Australia.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="free-resources.html">Free Resources</a></li>
+          <li><a href="school-events.html">School Events</a></li>
+          <li><a href="teacher-pd.html">Teacher PD</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@connectedcode.org">info@connectedcode.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ConnectEd Code. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/ConnectEdCode" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/70023307/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77A1.75 1.75 0 000 1.73v20.54A1.75 1.75 0 001.77 24h20.46A1.75 1.75 0 0024 22.27V1.73A1.75 1.75 0 0022.23 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CubeSat Workbooks — ConnectEd Code</title>
+  <meta name="description" content="CubeSat project workbooks — Introduction to Kookaberry, Radio, Sensors, Logging &amp; Graphing.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    pre { background: #1a202c; color: #e2e8f0; padding: 1.25rem; border-radius: var(--radius); overflow-x: auto; font-size: 0.9rem; line-height: 1.6; margin: 1rem 0 2rem; }
+    code { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+    .workbook { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .workbook:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><img src="../images/logo-white.svg" alt="ConnectEd Code"></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../free-resources.html">Free Resources</a></li>
+          <li><a href="../school-events.html">School Events</a></li>
+          <li><a href="../teacher-pd.html">Teacher PD</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="https://www.facebook.com/ConnectEdCode" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/></svg></a>
+        <a href="https://www.linkedin.com/company/70023307/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77A1.75 1.75 0 000 1.73v20.54A1.75 1.75 0 001.77 24h20.46A1.75 1.75 0 0024 22.27V1.73A1.75 1.75 0 0022.23 0z"/></svg></a>
+        <a href="mailto:info@connectedcode.org" aria-label="Email"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 850px;">
+      <h1 class="section-title">CubeSat Workbooks</h1>
+      <p class="section-subtitle">Reference code for each CubeSat workbook using the Kookaberry.</p>
+
+      <!-- Workbook 1 -->
+      <div class="workbook">
+        <h2>Workbook 1 — Introduction to Kookaberry</h2>
+        <h4>Parts 1–4 (print, display, variables, buttons, while loops)</h4>
+<pre><code># This is a comment
+from connectedcode import *
+
+# Print to the console
+print("Hello world")
+
+# Print to the console using a variable
+name = "Jack"
+print(name)
+print("Hello", name)
+
+# Print to the Kookaberry display
+display.print("Kookaberry")
+display.print("Hello", name)
+
+# Print to a specific position on the Kookaberry display
+display.print_at_position(2, 7, "bottom text")
+display.print_at_position(2, 7, "lower words")
+
+# Flash each LED for a second.
+led_green.on()
+sleep(1)
+led_green.off()
+led_orange.on()
+sleep(1)
+led_orange.off()
+led_red.on()
+sleep(1)
+led_red.off()
+
+# Loop forever
+while True:
+    # Print hello, then sleep for a second.
+    display.print("Hello")
+    sleep(1)
+
+    # Check if button A was pressed
+    if button_a.was_pressed():
+        # if it was, say that, then wait for a second.
+        display.print("Button A was pressed")
+        sleep(1)
+    else:
+        # Otherwise, clear the display.
+        display.clear()</code></pre>
+
+        <h4>Part 5 — Repeat After Me (combine previous concepts + for loops)</h4>
+<pre><code>from connectedcode import *
+
+# Create the presses as an empty string
+presses = ""
+
+# Loop forever
+while True:
+    # Check if each button was pressed
+    # And add the matching letter to the presses string
+    if button_a.was_pressed():
+        presses = presses + "a"
+    if button_b.was_pressed():
+        presses = presses + "b"
+    if button_d.was_pressed():
+        presses = presses + "c"
+
+    # Clear the display, then show the new presses
+    display.clear()
+    display.print(presses)
+
+    # Once button C is pressed...
+    if button_c.was_pressed():
+        # Loop through each letter in presses
+        for letter in presses:
+            # Flash the matching LED for half a second
+            if letter == "a":
+                led_red.on()
+                sleep(0.5)
+                led_red.off()
+            if letter == "b":
+                led_green.on()
+                sleep(0.5)
+                led_green.off()
+            if letter == "d":
+                led_orange.on()
+                sleep(0.5)
+                led_orange.off()
+        # Reset presses to empty, to reset the game.
+        presses = ""</code></pre>
+      </div>
+
+      <!-- Workbook 2 -->
+      <div class="workbook">
+        <h2>Workbook 2 — Radio</h2>
+        <h4>Set up radio, send &amp; receive messages</h4>
+<pre><code>from connectedcode import *
+
+# Store your team name in the variable called channel
+channel = "Team_Renee_and_Jack"
+
+# Set up radio and set the correct channel
+radio = connect_radio()
+radio.set_channel(channel)
+
+# Send a message over the radio
+radio.send_message("Hello")
+
+# Continually check for new radio messages
+# If there is a message print it out.
+while True:
+    message = radio.get_message()
+    if message:
+        display.print(message)</code></pre>
+      </div>
+
+      <!-- Workbook 3 -->
+      <div class="workbook">
+        <h2>Workbook 3 — Sensors</h2>
+        <h4>Set up sensors, calibrate, take measurements</h4>
+<pre><code>from connectedcode import *
+
+# Set up and calibrate sensors
+cubesat_sensors = connect_sensors()
+cubesat_sensors.calibrate()
+
+# Make your program run continuously
+while True:
+    # Take measurements and store them in variables
+    altitude = cubesat_sensors.get_altitude()
+    temp = cubesat_sensors.get_temperature()
+    pressure = cubesat_sensors.get_pressure()
+    acceleration = cubesat_sensors.get_acceleration()
+
+    # Display your measurements on the screen
+    display.print(f'Altitude: {altitude} m')
+    display.print(f'Temp: {temp} c')
+    display.print(f'Press: {pressure} hPa')
+    display.print(f'Accel: {acceleration} g')
+
+    sleep(0.5)</code></pre>
+      </div>
+
+      <!-- Workbook 4 -->
+      <div class="workbook">
+        <h2>Workbook 4 — Logging &amp; Graphing</h2>
+        <h4>Log sensor data to a file for graphing</h4>
+<pre><code>from connectedcode import *
+
+# Create variables to store your team name and the headers for your file
+team_name = "Team_Renee_and_Jack"
+headers = "time,altitude"
+# Use the header variable to start the logger
+logger = start_logger(team_name, headers)
+
+# Set up and calibrate the sensors
+cubesat_sensors = connect_sensors()
+cubesat_sensors.calibrate()
+
+# The main code loop where altitude measurements will be logged every second
+while True:
+    # Measure the altitude
+    altitude = cubesat_sensors.get_altitude()
+
+    # Get and print the time
+    current_time = seconds_since_start()
+    display.print(f"Time: {current_time} sec")
+
+    # Print the altitude
+    display.print(f"Alt: {altitude} m")
+
+    # Create a variable that stores the data, formatted correctly for logging.
+    # Then log the data.
+    data = f"{current_time},{altitude}"
+    logger.log(data)
+
+    # Keep checking the time every 0.1 seconds (in another while loop)
+    # until 1 second has passed since the last time current_time was set
+    while seconds_since_start() == current_time:
+        sleep(0.1)
+
+    display.clear()</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><img src="../images/logo-white.svg" alt="ConnectEd Code"></a>
+        <p>Connecting coding with context, community &amp; curriculum.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../free-resources.html">Free Resources</a></li>
+          <li><a href="../school-events.html">School Events</a></li>
+          <li><a href="../teacher-pd.html">Teacher PD</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul><li><a href="mailto:info@connectedcode.org">info@connectedcode.org</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ConnectEd Code. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
