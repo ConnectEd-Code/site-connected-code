@@ -34,18 +34,6 @@ module storage './modules/storage.bicep' = {
   }
 }
 
-// Application Insights + Log Analytics
-module monitoring './modules/monitoring.bicep' = {
-  name: 'monitoring'
-  scope: rg
-  params: {
-    logAnalyticsName: '${abbrs.operationalInsightsWorkspaces}${resourceToken}'
-    applicationInsightsName: '${abbrs.insightsComponents}${resourceToken}'
-    location: location
-    tags: tags
-  }
-}
-
 // Azure Communication Services (for email)
 module communication './modules/communication.bicep' = {
   name: 'communication'
@@ -77,7 +65,6 @@ module functionApp './modules/functionapp.bicep' = {
     tags: tags
     appServicePlanId: appServicePlan.outputs.id
     storageAccountName: storage.outputs.name
-    applicationInsightsConnectionString: monitoring.outputs.applicationInsightsConnectionString
     communicationServicesConnectionString: communication.outputs.connectionString
     senderEmail: senderEmail
   }

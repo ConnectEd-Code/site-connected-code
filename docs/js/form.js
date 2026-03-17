@@ -3,7 +3,7 @@
  *
  * UPDATE the FUNCTION_URL below after deploying your Azure Function.
  */
-const FUNCTION_URL = 'https://<YOUR-FUNCTION-APP>.azurewebsites.net/api/contact';
+const FUNCTION_URL = 'https://func-xijkj7tcxghyk.azurewebsites.net/api/contact';
 
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('form[data-form-type]');
@@ -40,8 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
           statusEl.textContent = 'Thank you! Your message has been sent. We\'ll be in touch soon.';
           form.reset();
         } else {
-          const errText = await response.text();
-          throw new Error(errText || 'Something went wrong');
+          // Try to parse a structured error from the API
+          let errBody;
+          try { errBody = await response.json(); } catch (_) { /* ignore */ }
+
+          if (errBody?.error === 'solicitation') {
+            statusEl.className = 'form-status error';
+            statusEl.textContent = errBody.message;
+          } else if (errBody?.error === 'rate_limit') {
+            statusEl.className = 'form-status error';
+            statusEl.textContent = errBody.message;
+          } else {
+            throw new Error(errBody?.message || 'Something went wrong');
+          }
         }
       } catch (err) {
         statusEl.className = 'form-status error';

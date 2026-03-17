@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConnectEd Code — Connecting Coding with Context, Community &amp; Curriculum</title>
   <meta name="description" content="Making hands-on STEM projects and experiences accessible to students and teachers, showing what you can unlock with technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -51,9 +54,9 @@
   <!-- ===== Connect with Context ===== -->
   <section class="section section-alt">
     <div class="container">
-      <div class="two-col">
+      <div class="two-col reveal">
         <div class="col-text">
-          <h2>Connect with Context</h2>
+          <h2><span class="section-icon teal"><img src="images/world.svg" alt="" style="width:32px;height:32px;"></span> Connect with Context</h2>
           <p class="subtitle">The potential you unlock when you learn to code is limitless, but there's much more to tech than code.</p>
           <p>Our mission is to inspire students to engage with coding by teaching them more than just the syntax. By connecting students with context we not only show them how they can change the world with code in more ways than they thought, but also make concepts easier to understand.</p>
         </div>
@@ -67,9 +70,9 @@
   <!-- ===== Connect with Community ===== -->
   <section class="section">
     <div class="container">
-      <div class="two-col reverse">
+      <div class="two-col reverse reveal">
         <div class="col-text">
-          <h2>Connect with Community</h2>
+          <h2><span class="section-icon purple"><img src="images/Connect.svg" alt="" style="width:32px;height:32px;"></span> Connect with Community</h2>
           <p class="subtitle">In communities of peers and mentors it's easy to feel at home, and see your future in tech.</p>
           <p>It's our goal to give students and teachers access to communities that inspire and support them. Through workshops, clubs and online communities we aim to create long lasting networks that help people connect with each other, STEM industries and us at ConnectEd Code!</p>
         </div>
@@ -83,9 +86,9 @@
   <!-- ===== Connect with Curriculum ===== -->
   <section class="section section-alt">
     <div class="container">
-      <div class="two-col">
+      <div class="two-col reveal">
         <div class="col-text">
-          <h2>Connect with Curriculum</h2>
+          <h2><span class="section-icon orange"><img src="images/books.svg" alt="" style="width:32px;height:32px;"></span> Connect with Curriculum</h2>
           <p class="subtitle">New curriculums bring lots of work for teachers. With our curriculum mapped content we're here to help.</p>
           <p>Whether you're a lifelong tech teacher, new to teaching coding, or teaching your kids at home it can be difficult to create engaging content that covers the curriculum. With our differentiated project-based content, and incursions we give each student an accessible challenge, while covering key concepts.</p>
         </div>
@@ -104,6 +107,11 @@
       <a href="contact-us.html" class="btn btn-outline">Connect with us!</a>
     </div>
   </section>
+
+  <!-- ===== Wave Divider ===== -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C360,60 1080,0 1440,40 L1440,60 L0,60 Z"></path></svg>
+  </div>
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
@@ -143,5 +151,17 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

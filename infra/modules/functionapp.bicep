@@ -13,9 +13,6 @@ param appServicePlanId string
 @description('Storage account name')
 param storageAccountName string
 
-@description('Application Insights connection string')
-param applicationInsightsConnectionString string
-
 @description('Azure Communication Services connection string')
 @secure()
 param communicationServicesConnectionString string
@@ -53,10 +50,6 @@ resource functionApp 'Microsoft.Web/sites@2023-01-01' = {
         {
           name: 'FUNCTIONS_WORKER_RUNTIME'
           value: 'python'
-        }
-        {
-          name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
-          value: applicationInsightsConnectionString
         }
         {
           name: 'COMMUNICATION_SERVICES_CONNECTION_STRING'
