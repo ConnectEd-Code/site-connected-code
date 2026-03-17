@@ -15,6 +15,7 @@ FORM_SUBJECTS = {
     "contact": "New Contact – Contact Page",
     "school-events": "New Contact – School Events Page",
     "teacher-pd": "New Contact – Teacher PD Page",
+    "teacher-pd-curriculum": "New Contact – Teacher PD Curriculum Page",
 }
 
 # ---------------------------------------------------------------------------
