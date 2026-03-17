@@ -68,6 +68,7 @@ resource functionApp 'Microsoft.Web/sites@2023-01-01' = {
         allowedOrigins: [
           'https://www.connectedcode.org'
           'https://connectedcode.org'
+          'https://connected-code.github.io'
           'http://localhost:8000'
           'http://127.0.0.1:8000'
         ]

@@ -12,9 +12,9 @@ RECIPIENT_EMAIL = "info@connectedcode.org"
 SENDER_EMAIL = os.environ.get("SENDER_EMAIL", "DoNotReply@connectedcode.org")
 
 FORM_SUBJECTS = {
-    "contact": "New Contact Form Submission",
-    "school-events": "New School Events Enquiry",
-    "teacher-pd": "New Teacher PD Enquiry",
+    "contact": "New Contact – Contact Page",
+    "school-events": "New Contact – School Events Page",
+    "teacher-pd": "New Contact – Teacher PD Page",
 }
 
 # ---------------------------------------------------------------------------
@@ -109,6 +109,8 @@ def build_email_body(data: dict) -> str:
         f"Email: {data.get('email', '')}",
     ]
 
+    if "phone" in data and data["phone"]:
+        lines.append(f"Phone: {data['phone']}")
     if "school" in data and data["school"]:
         lines.append(f"School: {data['school']}")
     if "subject" in data and data["subject"]:
@@ -126,6 +128,8 @@ def build_html_body(data: dict) -> str:
         f"<tr><td><strong>Email</strong></td><td><a href='mailto:{data.get('email', '')}'>{data.get('email', '')}</a></td></tr>",
     ]
 
+    if "phone" in data and data["phone"]:
+        rows.append(f"<tr><td><strong>Phone</strong></td><td>{data['phone']}</td></tr>")
     if "school" in data and data["school"]:
         rows.append(f"<tr><td><strong>School</strong></td><td>{data['school']}</td></tr>")
     if "subject" in data and data["subject"]:
